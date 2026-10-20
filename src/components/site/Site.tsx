@@ -430,7 +430,7 @@ function Features({ t, lang }: { t: Dict; lang: Lang }) {
         {/* Story 2 */}
         <article className="mt-6 grid items-center gap-10 overflow-hidden rounded-[2rem] border border-border p-6 sm:p-10 lg:grid-cols-[0.8fr_1fr] lg:p-14">
           <div className="relative order-last mx-auto w-full max-w-[280px] lg:order-first">
-            <Phone src={shots[2]!} alt={t.screens.items[2]![1]} />
+            <Phone src={shots[2]!} alt={t.screens.items[2]![1]!} />
           </div>
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1 text-sm font-semibold text-primary">
@@ -558,14 +558,14 @@ function Gallery({ t, lang }: { t: Dict; lang: Lang }) {
                   triggerRef.current = e.currentTarget;
                   setIdx(i);
                 }}
-                aria-label={`${t.screens.open}: ${t.screens.items[i]![0]}`}
+                aria-label={`${t.screens.open}: ${t.screens.items[i]![0]!}`}
                 className="group block w-full text-start"
               >
                 <div className="mx-auto max-w-[300px] transition-transform group-hover:-translate-y-1">
-                  <Phone src={src} alt={t.screens.items[i]![1]} />
+                  <Phone src={src} alt={t.screens.items[i]![1]!} />
                 </div>
-                <h3 className="mt-6 text-center text-lg font-bold">{t.screens.items[i]![0]}</h3>
-                <p className="mx-auto mt-1 max-w-xs text-center text-sm text-muted-foreground">{t.screens.items[i]![1]}</p>
+                <h3 className="mt-6 text-center text-lg font-bold">{t.screens.items[i]![0]!}</h3>
+                <p className="mx-auto mt-1 max-w-xs text-center text-sm text-muted-foreground">{t.screens.items[i]![1]!}</p>
               </button>
             </li>
           ))}
@@ -576,13 +576,13 @@ function Gallery({ t, lang }: { t: Dict; lang: Lang }) {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={t.screens.items[idx]![0]}
+          aria-label={t.screens.items[idx]![0]!}
           className="fixed inset-0 z-[80] flex items-center justify-center bg-background/95 p-4 backdrop-blur"
           onClick={(e) => e.target === e.currentTarget && setIdx(null)}
-          onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
+          onTouchStart={(e) => (touchX.current = e.touches[0]!.clientX)}
           onTouchEnd={(e) => {
             if (touchX.current === null) return;
-            const dx = e.changedTouches[0].clientX - touchX.current;
+            const dx = e.changedTouches[0]!.clientX - touchX.current;
             if (Math.abs(dx) > 50) go((dx < 0 ? 1 : -1) * (rtl ? -1 : 1));
             touchX.current = null;
           }}
@@ -615,13 +615,13 @@ function Gallery({ t, lang }: { t: Dict; lang: Lang }) {
           <figure className="flex max-h-full flex-col items-center">
             <img
               src={shots[idx]!}
-              alt={t.screens.items[idx]![1]}
+              alt={t.screens.items[idx]![1]!}
               width={902}
               height={1920}
               className="h-auto max-h-[80vh] w-auto max-w-[78vw] rounded-[1.75rem] border border-border"
             />
             <figcaption className="mt-4 text-center">
-              <span className="font-bold">{t.screens.items[idx]![0]}</span>
+              <span className="font-bold">{t.screens.items[idx]![0]!}</span>
               <span className="ms-2 text-sm text-muted-foreground">
                 {idx + 1} {t.screens.counter} {n}
               </span>
