@@ -203,7 +203,7 @@ function ThemeToggle({ t }: { t: Dict }) {
   );
 }
 
-function Header({ t, lang, section }: { t: Dict; lang: Lang; section?: string }) {
+function Header({ t, lang, section }: { t: Dict; lang: Lang; section?: string | undefined }) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     if (!open) return;
@@ -301,7 +301,7 @@ function Hero({ t, lang }: { t: Dict; lang: Lang }) {
           </div>
           <ul className="mt-8 flex flex-wrap gap-2">
             {t.hero.chips.map((c, i) => {
-              const I = chipIcons[i];
+              const I = chipIcons[i]!;
               return (
                 <li key={c} className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-sm">
                   <I className="size-4 text-primary" aria-hidden />
@@ -314,7 +314,7 @@ function Hero({ t, lang }: { t: Dict; lang: Lang }) {
 
         <div className="relative mx-auto w-full max-w-[460px] lg:max-w-none">
           <div className="relative mx-auto w-[64%] max-w-[330px]">
-            <Phone src={shots[0]} alt={t.hero.mainAlt} priority />
+            <Phone src={shots[0]!} alt={t.hero.mainAlt} priority />
             {/* Illustrative tap animation — not a live connection to the app */}
             <div aria-hidden className="absolute -end-[22%] bottom-[30%] w-[46%] sm:-end-[26%]">
               <div className="relative">
@@ -339,7 +339,7 @@ function Hero({ t, lang }: { t: Dict; lang: Lang }) {
             </div>
           </div>
           <div className="absolute -start-2 bottom-[-6%] hidden w-[34%] max-w-[170px] -rotate-6 opacity-95 sm:block lg:start-0">
-            <Phone src={shots[1]} alt={t.hero.sideAlt} priority />
+            <Phone src={shots[1]!} alt={t.hero.sideAlt} priority />
           </div>
         </div>
       </Container>
@@ -361,7 +361,7 @@ function Problem({ t }: { t: Dict }) {
         </div>
         <ol className="grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2">
           {t.problem.items.map(([h, p], i) => {
-            const I = icons[i];
+            const I = icons[i]!;
             return (
               <li key={h} className="bg-background p-6 sm:p-8">
                 <div className="flex items-center justify-between">
@@ -423,14 +423,14 @@ function Features({ t, lang }: { t: Dict; lang: Lang }) {
           </div>
           <div className="relative mx-auto w-full max-w-[280px]">
             <div aria-hidden className="absolute inset-[-15%] rounded-full bg-glow blur-3xl" />
-            <Phone src={shots[0]} alt={t.hero.mainAlt} className="relative" />
+            <Phone src={shots[0]!} alt={t.hero.mainAlt} className="relative" />
           </div>
         </article>
 
         {/* Story 2 */}
         <article className="mt-6 grid items-center gap-10 overflow-hidden rounded-[2rem] border border-border p-6 sm:p-10 lg:grid-cols-[0.8fr_1fr] lg:p-14">
           <div className="relative order-last mx-auto w-full max-w-[280px] lg:order-first">
-            <Phone src={shots[2]} alt={t.screens.items[2][1]} />
+            <Phone src={shots[2]!} alt={t.screens.items[2]![1]} />
           </div>
           <div>
             <span className="inline-flex items-center gap-2 rounded-full bg-primary/15 px-3 py-1 text-sm font-semibold text-primary">
@@ -444,7 +444,7 @@ function Features({ t, lang }: { t: Dict; lang: Lang }) {
         {/* Supporting grid */}
         <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {f.grid.map(([h, p], i) => {
-            const I = gridIcons[i];
+            const I = gridIcons[i]!;
             return (
               <li key={h} className="group rounded-3xl border border-border p-6 transition-colors hover:border-primary/60">
                 <I className="size-6 text-primary" aria-hidden />
@@ -491,7 +491,7 @@ function How({ t }: { t: Dict }) {
         </div>
         <ol className="mt-14 grid gap-6 md:grid-cols-3">
           {t.how.steps.map(([h, p], i) => {
-            const I = icons[i];
+            const I = icons[i]!;
             return (
               <li key={h} className="relative rounded-3xl border border-border bg-background p-7">
                 <span className="text-6xl font-extrabold leading-none text-primary/25">{i + 1}</span>
@@ -558,14 +558,14 @@ function Gallery({ t, lang }: { t: Dict; lang: Lang }) {
                   triggerRef.current = e.currentTarget;
                   setIdx(i);
                 }}
-                aria-label={`${t.screens.open}: ${t.screens.items[i][0]}`}
+                aria-label={`${t.screens.open}: ${t.screens.items[i]![0]}`}
                 className="group block w-full text-start"
               >
                 <div className="mx-auto max-w-[300px] transition-transform group-hover:-translate-y-1">
-                  <Phone src={src} alt={t.screens.items[i][1]} />
+                  <Phone src={src} alt={t.screens.items[i]![1]} />
                 </div>
-                <h3 className="mt-6 text-center text-lg font-bold">{t.screens.items[i][0]}</h3>
-                <p className="mx-auto mt-1 max-w-xs text-center text-sm text-muted-foreground">{t.screens.items[i][1]}</p>
+                <h3 className="mt-6 text-center text-lg font-bold">{t.screens.items[i]![0]}</h3>
+                <p className="mx-auto mt-1 max-w-xs text-center text-sm text-muted-foreground">{t.screens.items[i]![1]}</p>
               </button>
             </li>
           ))}
@@ -576,7 +576,7 @@ function Gallery({ t, lang }: { t: Dict; lang: Lang }) {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label={t.screens.items[idx][0]}
+          aria-label={t.screens.items[idx]![0]}
           className="fixed inset-0 z-[80] flex items-center justify-center bg-background/95 p-4 backdrop-blur"
           onClick={(e) => e.target === e.currentTarget && setIdx(null)}
           onTouchStart={(e) => (touchX.current = e.touches[0].clientX)}
@@ -614,14 +614,14 @@ function Gallery({ t, lang }: { t: Dict; lang: Lang }) {
           </button>
           <figure className="flex max-h-full flex-col items-center">
             <img
-              src={shots[idx]}
-              alt={t.screens.items[idx][1]}
+              src={shots[idx]!}
+              alt={t.screens.items[idx]![1]}
               width={902}
               height={1920}
               className="h-auto max-h-[80vh] w-auto max-w-[78vw] rounded-[1.75rem] border border-border"
             />
             <figcaption className="mt-4 text-center">
-              <span className="font-bold">{t.screens.items[idx][0]}</span>
+              <span className="font-bold">{t.screens.items[idx]![0]}</span>
               <span className="ms-2 text-sm text-muted-foreground">
                 {idx + 1} {t.screens.counter} {n}
               </span>
@@ -649,7 +649,7 @@ function Offline({ t }: { t: Dict }) {
           </div>
           <ul className="grid gap-4 sm:grid-cols-2">
             {t.offline.points.map(([h, p], i) => {
-              const I = icons[i];
+              const I = icons[i]!;
               return (
                 <li key={h} className="rounded-2xl border border-border bg-background p-5">
                   <I className="size-5 text-primary" aria-hidden />
@@ -678,7 +678,7 @@ function Premium({ t, lang }: { t: Dict; lang: Lang }) {
         <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">{t.premium.lead}</p>
         <ul className="mx-auto mt-12 grid max-w-5xl gap-4 text-start md:grid-cols-3">
           {t.premium.perks.map(([h, p], i) => {
-            const I = i === 0 ? Plus : icons[i];
+            const I = i === 0 ? Plus : icons[i]!;
             return (
               <li key={h} className="rounded-3xl border border-primary/30 bg-background/80 p-7 backdrop-blur">
                 <span className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
@@ -789,7 +789,7 @@ function Final({ t, lang }: { t: Dict; lang: Lang }) {
 
 /* ---------- footer ---------- */
 
-function Footer({ t, lang, section }: { t: Dict; lang: Lang; section?: string }) {
+function Footer({ t, lang, section }: { t: Dict; lang: Lang; section?: string | undefined }) {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-border bg-card/50 pb-24 pt-14 lg:pb-14">
