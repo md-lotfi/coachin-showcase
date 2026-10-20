@@ -157,14 +157,14 @@ function Phone({ src, alt, priority, className = "" }: { src: string; alt: strin
 
 /* ---------- header ---------- */
 
-function LangSwitch({ lang, section, t }: { lang: Lang; section?: string; t: Dict }) {
+function LangSwitch({ lang, section, t }: { lang: Lang; section?: string | undefined; t: Dict }) {
   return (
     <nav aria-label={t.menu.language} className="flex items-center rounded-full border border-border p-0.5 text-sm">
       {LANGS.map((l) => (
         <Link
           key={l}
           to={LANG_PATH[l]}
-          hash={section}
+          hash={section ?? ""}
           hrefLang={l}
           lang={l}
           aria-current={l === lang ? "page" : undefined}
