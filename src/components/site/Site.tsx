@@ -327,7 +327,7 @@ function Hero({ t, lang }: { t: Dict; lang: Lang }) {
             </div>
             <div
               aria-hidden
-              className="animate-pop-in absolute -start-[14%] top-[18%] flex items-center gap-2.5 rounded-2xl border border-border bg-card/95 px-3.5 py-2.5 shadow-xl backdrop-blur"
+              className="animate-pop-in absolute -start-[10%] top-[3%] flex items-center gap-2.5 rounded-2xl border border-border bg-card/95 px-3.5 py-2.5 shadow-xl backdrop-blur"
             >
               <span className="flex size-8 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <Check className="size-4" />
