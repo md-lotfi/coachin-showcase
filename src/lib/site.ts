@@ -5,7 +5,7 @@ export const PLAY_BASE = "https://play.google.com/store/apps/details?id=com.rays
 export const playUrl = (l: Lang) => `${PLAY_BASE}&hl=${l}`;
 
 /** Production origin. Set VITE_SITE_URL once the final domain is known; empty = relative URLs. */
-export const SITE_URL = ((import.meta.env.VITE_SITE_URL as string | undefined) ?? "").replace(/\/$/, "");
+export const SITE_URL = ((import.meta.env["VITE_SITE_URL"] as string | undefined) ?? "").replace(/\/$/, "");
 
 export function pageHead(lang: Lang) {
   const t = DICT[lang];

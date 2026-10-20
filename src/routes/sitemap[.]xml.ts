@@ -4,7 +4,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: ({ request }) => {
-        const origin = (process.env.VITE_SITE_URL || new URL(request.url).origin).replace(/\/$/, "");
+        const origin = (process.env["VITE_SITE_URL"] || new URL(request.url).origin).replace(/\/$/, "");
         const paths = ["/", "/fr", "/ar"];
         const alts = paths
           .map((p, i) => `<xhtml:link rel="alternate" hreflang="${["en", "fr", "ar"][i]}" href="${origin}${p}"/>`)
