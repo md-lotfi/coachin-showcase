@@ -1,0 +1,146 @@
+{
+  "apple-touch-icon.png": {
+    "bytes": 24005,
+    "sha256": "783a0d7fa3713c8975c8bae1782e5e611364bfe783a4fc5cf7f5bfc5c94546f3",
+    "dimensions": [
+      180,
+      180
+    ]
+  },
+  "checkin_ar.webp": {
+    "bytes": 30704,
+    "sha256": "4fd6b54e91ad00720958225b034b0293beb8b1d3b9a1aed3c0d85f6375df7cf9",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "checkin_en.webp": {
+    "bytes": 32052,
+    "sha256": "524eff19f18f2f47c42566328fff6b27fa88cd9e795a0db109f4aefb540205a0",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "checkin_fr.webp": {
+    "bytes": 33542,
+    "sha256": "3d2c73a52ae88fda64a7d6ac13b49e11c4aa4c2b5e94fad27758119230bbf324",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "coachin-icon.png": {
+    "bytes": 37787,
+    "sha256": "089bbb71abd0c17df9457257b2b462e4c23d07b83544591a9e82a5758f0ae9a6",
+    "dimensions": [
+      256,
+      256
+    ]
+  },
+  "coachin-logo.png": {
+    "bytes": 269479,
+    "sha256": "309b0939683414645c5fea31b695b86137302c8e9a525a88d567359ae2c16f49",
+    "dimensions": [
+      640,
+      376
+    ]
+  },
+  "download-qr.svg": {
+    "bytes": 19254,
+    "sha256": "ecbbe1a826fea7f292db81915b24065d5fb90478d827a1c50ca6111ded02381c"
+  },
+  "favicon.png": {
+    "bytes": 4679,
+    "sha256": "dc0a90866f88565b0a21d173b267949ac223fc759d71653f6cc02bd6878b7590",
+    "dimensions": [
+      64,
+      64
+    ]
+  },
+  "gplay_ar.png": {
+    "bytes": 15823,
+    "sha256": "29e74ca0db2b79c6a6d70ab3c63c8c1bf7a0574a0f91058d5743c9072ace7383",
+    "dimensions": [
+      646,
+      250
+    ]
+  },
+  "gplay_en.png": {
+    "bytes": 4904,
+    "sha256": "f72611e2df8e88204009fd896d05d5e8e83c77009c63943bbffa169559934849",
+    "dimensions": [
+      646,
+      250
+    ]
+  },
+  "gplay_fr.png": {
+    "bytes": 18061,
+    "sha256": "57d0e69e021d5d08f1fcacfc44e6dd3c79f5d74627bfbc0f696a88f03fb06c4a",
+    "dimensions": [
+      646,
+      250
+    ]
+  },
+  "icons.svg": {
+    "bytes": 3769,
+    "sha256": "a1faa4455e7074a25549311b70cf8d29e7a8169402ae0175d75b05349b2c057b"
+  },
+  "pin_ar.webp": {
+    "bytes": 20836,
+    "sha256": "b80e0f6e9502db39fb14026109c49522758bdc4b217faf88e724a404eb4ed91b",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "pin_en.webp": {
+    "bytes": 21516,
+    "sha256": "fd13480df81e7be1abcf871a14694e10c36c2d5465ab725df2f16903222151d5",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "pin_fr.webp": {
+    "bytes": 21150,
+    "sha256": "66918f6562a6b60b0f8968350a425530e7c72caccb9e104e8759114253856532",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "social-preview.png": {
+    "bytes": 54409,
+    "sha256": "5f830dcbdea5eb570fac465ae405c2fce897a75da24643b08a4043b183d97b52",
+    "dimensions": [
+      1200,
+      630
+    ]
+  },
+  "subscribe_ar.webp": {
+    "bytes": 27302,
+    "sha256": "67ddcf72521734724905d2d43d15b008f2f01bb675f987c909a8dc097dd58acf",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "subscribe_en.webp": {
+    "bytes": 33116,
+    "sha256": "135b6ba4491acaccc1c0d9f1734a03e6ae2be619fbcce6f643f048ed70e4317f",
+    "dimensions": [
+      902,
+      1920
+    ]
+  },
+  "subscribe_fr.webp": {
+    "bytes": 33680,
+    "sha256": "f7093f2a1f73e7c6f0702d2519f02b4f020675127129c5fa198826dcd2c8c164",
+    "dimensions": [
+      902,
+      1920
+    ]
+  }
+}
